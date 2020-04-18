@@ -20,7 +20,7 @@ pandoc_args += --syntax-definition style/pure.xml
 
 # Any file in the `lit` directory that is not a Markdown source 
 # is to be copied to the `docs` directory
-static_files := $(shell find lit -type f -not -name '*.md')
+static_files := $(shell find -L lit -type f -not -name '*.md')
 static_targets := $(static_files:lit/%=docs/%)
 
 # This should build everything needed to generate your web site. That includes
