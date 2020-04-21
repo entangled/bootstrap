@@ -85,6 +85,12 @@ Create a new project by running cookiecutter
 cookiecutter https://github.com/entangled/bootstrap
 ```
 
+Build the site for the first time
+
+```bash
+make site
+```
+
 Watch for changes in source directories and view them in the browser
 
 ```bash
