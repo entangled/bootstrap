@@ -15,8 +15,8 @@ pandoc_args += -f markdown+multiline_tables+simple_tables
 
 # Load syntax definitions for languages that are not supported
 # by default. These XML files are in the format of the Kate editor.
-pandoc_args += --syntax-definition style/elm.xml
-pandoc_args += --syntax-definition style/pure.xml
+# pandoc_args += --syntax-definition style/elm.xml
+# pandoc_args += --syntax-definition style/pure.xml
 
 # Any file in the `lit` directory that is not a Markdown source 
 # is to be copied to the `docs` directory
@@ -36,7 +36,7 @@ clean:
 watch:
 	@tmux new-session make --no-print-directory watch-pandoc \; \
 		split-window -v make --no-print-directory watch-browser-sync \; \
-		split-window -v entangled ./lit/*.md \; \
+		split-window -v entangled daemon \; \
 		select-layout even-vertical \;
 
 watch-pandoc:
