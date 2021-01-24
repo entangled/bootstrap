@@ -24,8 +24,8 @@ $for(css)$
   <link rel="stylesheet" href="$css$" />
 $endfor$
 $if(math)$
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  $math$
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 $endif$
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -45,19 +45,6 @@ $endfor$
 $for(include-before)$
 $include-before$
 $endfor$
-
-$if(toc)$
-<nav id="$idprefix$TOC" role="doc-toc" class="navbar navbar-dark bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a href="#" class="ml-5 mr-auto navbar-brand">$title$<br><span style="font-size: smaller">$subtitle$ by <i>$author$</i></span></a>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-$table-of-contents$
-</div>
-</nav>
-$endif$
-
 <!-- $if(title)$
 <nav class="navbar navbar-dark navbar-expand-md bg-dark mb-4">
 $if(subtitle)$
@@ -71,6 +58,17 @@ $if(date)$
 $endif$
 </nav>
 $endif$ -->
+$if(toc)$
+<nav id="$idprefix$TOC" role="doc-toc" class="navbar navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a href="#" class="ml-5 mr-auto navbar-brand">$title$<br><span style="font-size: smaller">$subtitle$ by <i>$author$</i></span></a>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+$table-of-contents$
+</div>
+</nav>
+$endif$
 
 <main role="main" class="flex-fill"><div class="container my-5">
 $body$
