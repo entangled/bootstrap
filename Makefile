@@ -49,7 +49,7 @@ watch-pandoc:
 watch-browser-sync:
 	browser-sync start -w -s docs
 
-docs/index.html: lit/index.md style/template.html style/styles.html Makefile
+docs/index.html: lit/index.md style/template.html style/scripts.html style/styles.html Makefile
 	@mkdir -p docs
 	pandoc $(pandoc_args) $< -o $@
 
