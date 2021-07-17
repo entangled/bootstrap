@@ -6,6 +6,7 @@ framework_dir := bootstrap-4.4.1-dist
 
 # Arguments to Pandoc; these are reasonable defaults
 pandoc_args += --template style/template.html
+pandoc_args += -M document-css=false
 pandoc_args += --css css/$(framework).css
 pandoc_args += --css css/mods.css
 pandoc_args += -t html5 -s --mathjax --toc
@@ -48,7 +49,7 @@ watch-pandoc:
 watch-browser-sync:
 	browser-sync start -w -s docs
 
-docs/index.html: lit/index.md style/template.html Makefile
+docs/index.html: lit/index.md style/template.html style/scripts.html style/styles.html Makefile
 	@mkdir -p docs
 	pandoc $(pandoc_args) $< -o $@
 
